@@ -41,6 +41,15 @@ html{
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+.dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202548;
+    --color-dark: #edeffd;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --color-dark-variant: #a3bdcc;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 a{
     color: var(--color-dark);
 }
@@ -125,7 +134,7 @@ body{
 
 .container{
     display: grid;
-    grid-template-columns: 14rem auto 23rem ;
+    grid-template-columns: 12rem auto 19rem ;
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
@@ -247,6 +256,7 @@ main .date{
 main .date input{
     background: none;
     color: var(--color-dark);
+    cursor: pointer;
 }
 
 main .insights{
@@ -540,7 +550,7 @@ main .recent_orders a{
 /* ------------------------media queries------------------------------- */
 /* big tablets & small laptops */
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
 
     /* side-bar */
 
@@ -590,8 +600,8 @@ main .recent_orders a{
         display: none;
     }
      
-    main table tbody  tr td:last-child,
-    main table tbody  tr td:first-child{
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child{
         display: none;
     }
 }
@@ -605,7 +615,7 @@ main .recent_orders a{
 
     aside{
         position: fixed;
-        left: 0;
+        left: -100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -613,6 +623,13 @@ main .recent_orders a{
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
     }
 
     aside .logo{
@@ -669,6 +686,7 @@ main .recent_orders a{
         left: 0;
         align-items: center;
         padding: 0 0.8rem;
+        height: 4.6rem;
         background: var(--color-white);
         width: 100%;
         margin: 0;
